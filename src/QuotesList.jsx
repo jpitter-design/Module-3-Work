@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function QuotesList() {
   const [status, setStatus] = useState("loading");   // "loading", "error", or "success"
-  const [items, setItems] = useState([]);
+  const [quotes, setquotes] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function QuotesList() {
 
   return (
     <ul>
-      {items.map(i => (
+      {quotes.map(i => (
         <li key={i.id}>{i.name}</li>
       ))}
     </ul>

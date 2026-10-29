@@ -1,8 +1,10 @@
 import express from "express";
 
 const app = express();
-app.use(express.json()); 
 
+app.use(express.json());   // reads JSON request bodies; we need it from Lab 3B on
+
+// In memory: no database. Change the names and fields to your own resource later.
 const quotes = [
   { id: 1, name: "Hello", category: "A" },
   { id: 2, name: "welcome", category: "B" },
@@ -11,7 +13,7 @@ const quotes = [
 ];
 
 app.get("/api/quotes", (req, res) => {
-  return res.status(200).json(quotes);
+   res.status(200).json(quotes);
 });
 
 app.get("/api/quotes/:id", (req, res) => {
@@ -21,7 +23,7 @@ app.get("/api/quotes/:id", (req, res) => {
     return res.status(404).json({
       error: {
         code: "NOT_FOUND",
-        message: `No quote with id ${req.params.id}`,
+        message: `No item with id ${req.params.id}`,
       },
     });
   }
@@ -29,6 +31,6 @@ app.get("/api/quotes/:id", (req, res) => {
   res.status(200).json(quotes);
 });
 
-app.listen(3001, () => {
-  console.log("API running at http://localhost:3001");
+app.listen(3000, () => {
+  console.log("API running at http://localhost:3000");
 });
