@@ -27,7 +27,7 @@ app.get("/api/quotes/:id", (req, res) => {
     });
   }
 
-  res.status(200).json(item);
+  res.status(200).json(quotes);
 });
 
 app.listen(3001, () => {
