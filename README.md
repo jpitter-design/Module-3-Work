@@ -1,1 +1,1 @@
-Replace Later
+In the loading state, the text under the quotes header simply just says "loading...". in the error stage it displays "Could not load quotes." and displays the error code. when it succeeds it prints the list out in bullet points. it's necessary because it's more specific and helps the user understand where the error occurred rather than it telling them there was a general error  
